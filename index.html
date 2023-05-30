@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Flashcard App</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.3/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <div class="flashcard-container">
+      <div id="flashcard-template" class="flashcard card mb-3">
+        <div class="card-body">
+          <h3 class="front card-title"></h3>
+          <p class="back card-text"></p>
+        </div>
+      </div>
+    </div>
+
+    <form id="flashcard-form" class="mt-4">
+      <div class="row">
+        <div class="col-md-6">
+          <input type="text" id="front-input" class="form-control mb-2" placeholder="Front of the flashcard" required>
+        </div>
+        <div class="col-md-6">
+          <input type="text" id="back-input" class="form-control mb-2" placeholder="Back of the flashcard" required>
+        </div>
+      </div>
+      <button type="submit" class="btn btn-primary">Add Flashcard</button>
+    </form>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
