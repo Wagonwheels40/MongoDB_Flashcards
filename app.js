@@ -71,3 +71,4 @@ app.listen(port, () => {
 
 
 // As it stands, it should just show you an empty array on localhost:3000/Flashcards
+// Use a POST METHOD
