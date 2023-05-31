@@ -7,14 +7,14 @@ const port = 3000;
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-// Set up routes and middleware here
-
-const dbUri = "mongodb+srv://dkwagner40:Lmbas123@cluster0.pfvqylq.mongodb.net/";
+const dbUri = "mongodb+srv://<username>:<password>@cluster0.pfvqylq.mongodb.net/";
 
 mongoose.connect(dbUri, { useNewUrlParser: true, useUnifiedTopology: true })
   .then(() => {
     console.log('Connected to MongoDB Atlas');
-    // Continue setting up the app
+    app.listen(port, () => {
+      console.log(`App listening at http://localhost:${port}`);
+    });
   })
   .catch((error) => {
     console.error('Error connecting to MongoDB Atlas', error);
@@ -64,11 +64,3 @@ app.delete('/flashcards/:id', (req, res) => {
       res.status(500).json({ error: 'An error occurred' });
     });
 });
-
-app.listen(port, () => {
-  console.log(`App listening at http://localhost:${port}`);
-});
-
-
-// As it stands, it should just show you an empty array on localhost:3000/Flashcards
-// Use a POST METHOD
